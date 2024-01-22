@@ -96,7 +96,7 @@ function M.load_syntax(colors)
 	syntax["ErrorMsg"] = { fg = colors.red, bg = colors.err_bg, style = "reverse" }
 	syntax["FoldColumn"] = { fg = colors.base0 }
 	syntax["Folded"] = { fg = colors.base0, guisp = colors.base03, style = "bold" }
-	syntax["IncSearch"] = { fg = colors.orange, style = "standout" }
+	syntax["IncSearch"] = { fg = colors.red, style = "standout" }
 	syntax["LineNr"] = { fg = colors.base01 }
 	syntax["MatchParen"] = { fg = colors.base3, bg = colors.base02, style = "bold" }
 	syntax["ModeMsg"] = { fg = colors.blue }
@@ -292,7 +292,7 @@ function M.load_syntax(colors)
 	syntax["Float"] = syntax["Constant"]
 	-- Highlight floating windows borders.
 	-- https://vi.stackexchange.com/a/39075
-	syntax["FloatBorder"] = { cterm = "none", ctermbg = "none", ctermfg = "none" }
+	syntax["FloatBorder"] = { fg = colors.none, cterm = colors.none, ctermbg = colors.none, ctermfg = colors.none }
 	syntax["Function"] = { fg = colors.orange }
 	syntax["Include"] = { fg = colors.violet }
 	syntax["Keyword"] = syntax["Statement"]
@@ -393,7 +393,7 @@ function M.load_syntax(colors)
 	syntax["TSTypeBuiltin"] = syntax["Function"]
 	-- syntax['TSEmphasis'] = syntax['']
 	-- TreeSitter context: Show an underline under the current context.
-	syntax["TreesitterContextBottom"] = { style = "underline" }
+	syntax["TreesitterContextBottom"] = { fg = colors.none, style = "underline" }
 
 	syntax["DiagnosticError"] = { fg = colors.red, guisp = colors.red, style = "none" }
 	syntax["DiagnosticWarn"] = { fg = colors.yellow, guisp = colors.yellow, style = "none" }
@@ -407,6 +407,7 @@ function M.load_syntax(colors)
 	syntax["LspReferenceRead"] = { fg = colors.none, style = "underline" }
 	syntax["LspReferenceText"] = syntax["LspReferenceRead"]
 	syntax["LspReferenceWrite"] = { fg = colors.none, style = "underline,bold" }
+	syntax["LspCodeLens"] = { fg = colors.magenta }
 
 	syntax["LspSagaFinderSelection"] = syntax["Search"]
 	syntax["TargetWord"] = syntax["Title"]
@@ -505,9 +506,26 @@ function M.load_syntax(colors)
 	syntax["DapUIWatchesError"] = { fg = colors.red }
 	syntax["DapUIStoppedThread"] = { fg = colors.cyan }
 
+	-- Color the ATX ### headers in lighter grey
+	syntax["@md.header_marker"] = { fg = colors.base01, style = "italic,nocombine" }
+	-- Color H1 headlines/header in red
+	syntax["@md.h1_text"] = { fg = { "#cd6a46", "none" }, style = "bold" }
+	-- Color H2 headlines/header in blue
+	syntax["@md.h2_text"] = { fg = colors.blue, style = "bold" }
+	-- Color H3 headlines/header in darker green
+	syntax["@md.h3_text"] = { fg = { "#607266", "none" }, style = "bold" }
+	-- Color H4 headlines/header in green/grey
+	syntax["@md.h4_text"] = { fg = { "#889792", "none" }, style = "bold" }
+	-- Color H5 headlines/header in green/grey
+	syntax["@md.h5_text"] = { fg = { "#889792", "none" }, style = "bold" }
+
 	for group, highlights in pairs(syntax) do
 		utils.highlighter(group, highlights)
 	end
+
+	-- Markdown fix: Disable @text.title highlight as for some reason it overwrites the
+	-- @md.hN_text definitions.
+	vim.api.nvim_set_hl(0, "@text.titlemarkdown", {})
 end
 
 function M.terminal_colors(colors)
@@ -519,7 +537,9 @@ function M.terminal_colors(colors)
 	g.terminal_color_5 = colors.magenta[1] -- '#d33682'
 	g.terminal_color_6 = colors.cyan[1] -- '#2aa198'
 	g.terminal_color_7 = colors.base2[1] -- '#eee8d5'
-	g.terminal_color_8 = colors.base03[1] -- '#002b36'
+	-- fix that a specific dark color is the same as the background color and thus not visible.
+	-- g.terminal_color_8 = colors.base03[1] -- '#002b36'
+	vim.g.terminal_color_8 = colors.base2[1] -- "#073642"
 	g.terminal_color_9 = colors.orange[1] -- '#cb4b16'
 	g.terminal_color_10 = colors.base01[1] -- '#586e75'
 	g.terminal_color_11 = colors.base00[1] -- '#657b83'
