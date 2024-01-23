@@ -51,7 +51,7 @@ function M.load_syntax(colors)
 		syntax["SpellCap"] = { fg = colors.violet, guisp = colors.violet, style = "underline" }
 		syntax["SpellLocal"] = { fg = colors.yellow, guisp = colors.yellow, style = "underline" }
 		syntax["SpellRare"] = { fg = colors.cyan, guisp = colors.cyan, style = "underline" }
-		syntax["Title"] = { fg = { "#cd6a46", "none" }, style = "bold", cterm = "bold" }
+		syntax["Title"] = { fg = colors.red, style = "bold", cterm = "bold" }
 	end
 
 	if g.solarized_diffmode == "high" then
@@ -545,11 +545,17 @@ function M.load_syntax(colors)
 	syntax["@markup"] = { fg = colors.cyan }
 	syntax["@markup.literal"] = { fg = colors.cyan }
 	syntax["@markup.emphasis"] = { fg = colors.orange }
+	syntax["@markup.italic.markdown_inline"] = syntax["@markup.emphasis"]
 	syntax["@markup.strong"] = { fg = colors.none, style = "bold" }
 	syntax["@markup.special"] = { fg = colors.blue }
 	syntax["@punctuation.delimiter"] = { fg = colors.base01 }
 	syntax["@markup.reference"] = { fg = colors.violet }
 	syntax["@markup.uri"] = { fg = colors.base01, style = "italic" }
+	syntax["@markup.link.markdown_inline"] = { fg = colors.violet}
+	syntax["@markup.link.label.markdown_inline"] = { fg = colors.violet, style = "underline" }
+	syntax["@markup.link.url.markdown_inline"] = { fg = colors.base01 }
+    syntax["@markup.list.unchecked.markdown"] = { fg = colors.orange }
+	syntax["@markup.list.checked.markdown"] = { fg = colors.green }
 
 	syntax["FloatermBorder"] = {
 		fg = colors.base1,
