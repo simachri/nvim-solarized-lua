@@ -507,17 +507,22 @@ function M.load_syntax(colors)
 	syntax["DapUIStoppedThread"] = { fg = colors.cyan }
 
 	-- Color the ATX ### headers in lighter grey
-	syntax["@md.header_marker"] = { fg = colors.base01, style = "italic,nocombine" }
+	syntax["@markup.heading.1.marker.markdown"] = { fg = colors.base01, style = "italic,nocombine" }
+	syntax["@markup.heading.2.marker.markdown"] = syntax["@markup.heading.1.marker.markdown"]
+	syntax["@markup.heading.3.marker.markdown"] = syntax["@markup.heading.1.marker.markdown"]
+	syntax["@markup.heading.4.marker.markdown"] = syntax["@markup.heading.1.marker.markdown"]
+	syntax["@markup.heading.5.marker.markdown"] = syntax["@markup.heading.1.marker.markdown"]
+	syntax["@markup.heading.6.marker.markdown"] = syntax["@markup.heading.1.marker.markdown"]
 	-- Color H1 headlines/header in red
-	syntax["@md.h1_text"] = { fg = { "#cd6a46", "none" }, style = "bold" }
+	syntax["@markup.heading.1.markdown"] = { fg = { "#cd6a46", "none" }, style = "bold" }
 	-- Color H2 headlines/header in blue
-	syntax["@md.h2_text"] = { fg = colors.blue, style = "bold" }
+	syntax["@markup.heading.2.markdown"] = { fg = colors.blue, style = "bold" }
 	-- Color H3 headlines/header in darker green
-	syntax["@md.h3_text"] = { fg = { "#607266", "none" }, style = "bold" }
+	syntax["@markup.heading.3.markdown"] = { fg = { "#607266", "none" }, style = "bold" }
 	-- Color H4 headlines/header in green/grey
-	syntax["@md.h4_text"] = { fg = { "#889792", "none" }, style = "bold" }
+	syntax["@markup.heading.4.markdown"] = { fg = { "#889792", "none" }, style = "bold" }
 	-- Color H5 headlines/header in green/grey
-	syntax["@md.h5_text"] = { fg = { "#889792", "none" }, style = "bold" }
+	syntax["@markup.heading.5.markdown"] = { fg = { "#889792", "none" }, style = "bold" }
 
 	syntax["@markup"] = { fg = colors.cyan }
 	syntax["@markup.literal"] = { fg = colors.cyan }
