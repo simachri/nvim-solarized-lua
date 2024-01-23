@@ -544,6 +544,7 @@ function M.load_syntax(colors)
 
 	syntax["@markup"] = { fg = colors.blue }
 	syntax["@markup.literal"] = { fg = colors.cyan }
+	syntax["@markup.raw.markdown_inline"] = syntax["@markup.literal"]
 	syntax["@markup.emphasis"] = { fg = colors.orange }
 	syntax["@markup.italic.markdown_inline"] = syntax["@markup.emphasis"]
 	syntax["@markup.strong"] = { fg = colors.none, style = "bold" }
@@ -553,8 +554,9 @@ function M.load_syntax(colors)
 	syntax["@markup.uri"] = { fg = colors.base01, style = "italic" }
 	syntax["@markup.link.markdown_inline"] = { fg = colors.violet}
 	syntax["@markup.link.label.markdown_inline"] = { fg = colors.violet, style = "underline" }
-	syntax["@markup.link.url.markdown_inline"] = { fg = colors.base01 }
-    syntax["@markup.list.unchecked.markdown"] = { fg = colors.orange }
+	-- syntax["@markup.link.url.markdown_inline"] = { fg = colors.base01 }
+	syntax["@markup.link.url.markdown_inline"] = { fg = colors.orange }
+    syntax["@markup.list.unchecked.markdown"] = { fg = colors.magenta }
 	syntax["@markup.list.checked.markdown"] = { fg = colors.green }
 
 	syntax["FloatermBorder"] = {
