@@ -570,6 +570,8 @@ function M.load_syntax(colors)
 	}
 	syntax["FloatermNC"] = syntax["FloatermBorder"]
 
+    syntax["confluenceWord"] = { fg = colors.none }
+
 	for group, highlights in pairs(syntax) do
 		utils.highlighter(group, highlights)
 	end
