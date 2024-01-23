@@ -1,10 +1,8 @@
 local M = {}
 local cmd = vim.cmd
 local g = vim.g
-local o = vim.o
 local fn = vim.fn
 local utils = require("solarized.utils")
-local colors
 
 cmd("hi clear")
 
