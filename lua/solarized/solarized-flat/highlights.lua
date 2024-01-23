@@ -51,7 +51,7 @@ function M.load_syntax(colors)
 		syntax["SpellCap"] = { fg = colors.violet, guisp = colors.violet, style = "underline" }
 		syntax["SpellLocal"] = { fg = colors.yellow, guisp = colors.yellow, style = "underline" }
 		syntax["SpellRare"] = { fg = colors.cyan, guisp = colors.cyan, style = "underline" }
-		syntax["Title"] = { fg = colors.orange, style = "bold", cterm = "bold" }
+		syntax["Title"] = { fg = { "#cd6a46", "none" }, style = "bold", cterm = "bold" }
 	end
 
 	if g.solarized_diffmode == "high" then
