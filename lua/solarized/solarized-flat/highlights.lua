@@ -583,6 +583,7 @@ function M.load_syntax(colors)
 	vim.api.nvim_set_hl(0, "@text.titlemarkdown", {})
 end
 
+-- set the colors for the nvim terminal buffer
 function M.terminal_colors(colors)
 	g.terminal_color_0 = colors.base02[1] -- '#073642'
 	g.terminal_color_1 = colors.red[1] -- '#dc322f'
@@ -594,8 +595,9 @@ function M.terminal_colors(colors)
 	g.terminal_color_7 = colors.base2[1] -- '#eee8d5'
 	-- fix that a specific dark color is the same as the background color and thus not visible.
 	-- g.terminal_color_8 = colors.base03[1] -- '#002b36'
-	vim.g.terminal_color_8 = colors.base2[1] -- "#073642"
-	g.terminal_color_9 = colors.orange[1] -- '#cb4b16'
+	g.terminal_color_8 = colors.base2[1] -- "#073642"
+	-- g.terminal_color_9 = colors.orange[1] -- '#cb4b16'
+	g.terminal_color_9 = colors.red[1] -- '#cb4b16'
 	g.terminal_color_10 = colors.base01[1] -- '#586e75'
 	g.terminal_color_11 = colors.base00[1] -- '#657b83'
 	g.terminal_color_12 = colors.base0[1] -- '#839496'
