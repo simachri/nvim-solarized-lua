@@ -326,7 +326,7 @@ function M.load_syntax(colors)
 	syntax["StatusLineTerm"] = syntax["StatusLine"]
 	syntax["StatusLineTermNC"] = syntax["StatusLineNC"]
 	syntax["StorageClass"] = syntax["Type"]
-	syntax["String"] = syntax["Constant"]
+	syntax["String"] = { fg = colors.green }
 	syntax["Structure"] = syntax["Type"]
 	syntax["Tag"] = syntax["Special"]
 	syntax["Typedef"] = syntax["Type"]
