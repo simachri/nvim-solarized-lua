@@ -101,7 +101,17 @@ function M.load_syntax(colors)
 	syntax["MatchParen"] = { fg = colors.base3, bg = colors.base02, style = "bold" }
 	syntax["ModeMsg"] = { fg = colors.blue }
 	syntax["MoreMsg"] = { fg = colors.blue }
-	syntax["Pmenu"] = { fg = colors.base0, bg = colors.base02, guibg = "none" }
+	-- syntax["Pmenu"] = { fg = colors.base0, bg = colors.base02, guibg = "none" }
+    -- used by Lazy and Cmp
+	syntax["Pmenu"] = {
+		fg = colors.base0,
+		bg = colors.none,
+		guifg = colors.base1,
+		guibg = colors.none,
+		ctermfg = colors.base1,
+		ctermbg = colors.none,
+		cterm = colors.none,
+	}
 	syntax["PmenuSbar"] = { fg = colors.none, bg = colors.base02 }
 	syntax["PmenuSel"] = { fg = colors.base2, bg = colors.base01 }
 	syntax["PmenuThumb"] = { fg = colors.none, bg = colors.base01 }
@@ -292,7 +302,15 @@ function M.load_syntax(colors)
 	syntax["Float"] = syntax["Constant"]
 	-- Highlight floating windows borders.
 	-- https://vi.stackexchange.com/a/39075
-	syntax["FloatBorder"] = { fg = colors.none, cterm = colors.none, ctermbg = colors.none, ctermfg = colors.none }
+	syntax["FloatBorder"] = {
+		fg = colors.base1,
+		bg = colors.none,
+		guifg = colors.base1,
+		guibg = colors.none,
+		ctermfg = colors.base1,
+		ctermbg = colors.none,
+		cterm = colors.none,
+	}
 	syntax["Function"] = { fg = colors.orange }
 	syntax["Include"] = { fg = colors.violet }
 	syntax["Keyword"] = syntax["Statement"]
@@ -422,7 +440,7 @@ function M.load_syntax(colors)
 
 	-- nvim-cmp syntax support
 	syntax["CmpDocumentation"] = { fg = colors.base1, bg = colors.base02 }
-	syntax["CmpDocumentationBorder"] = { fg = colors.base1, bg = colors.base02 }
+	syntax["CmpDocumentationBorder"] = { fg = colors.base1, bg = colors.none }
 
 	syntax["CmpItemAbbr"] = { fg = colors.base0, bg = colors.none }
 	syntax["CmpItemAbbrDeprecated"] = { fg = colors.base0, bg = colors.none }
@@ -532,6 +550,17 @@ function M.load_syntax(colors)
 	syntax["@punctuation.delimiter"] = { fg = colors.base01 }
 	syntax["@markup.reference"] = { fg = colors.violet }
 	syntax["@markup.uri"] = { fg = colors.base01, style = "italic" }
+
+	syntax["FloatermBorder"] = {
+		fg = colors.base1,
+		bg = colors.none,
+		guifg = colors.base1,
+		guibg = colors.none,
+		ctermfg = colors.base1,
+		ctermbg = colors.none,
+		cterm = colors.none,
+	}
+	syntax["FloatermNC"] = syntax["FloatermBorder"]
 
 	for group, highlights in pairs(syntax) do
 		utils.highlighter(group, highlights)
