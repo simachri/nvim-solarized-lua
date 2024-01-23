@@ -568,7 +568,10 @@ function M.load_syntax(colors)
 	}
 	syntax["FloatermNC"] = syntax["FloatermBorder"]
 
+    -- others: /home/xi3k/.config/nvim/after/syntax/confluencewiki.vim
     syntax["confluenceWord"] = { fg = colors.none }
+
+    syntax["taskeditKey"] = { fg = colors.blue }
 
 	for group, highlights in pairs(syntax) do
 		utils.highlighter(group, highlights)
