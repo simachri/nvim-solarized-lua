@@ -542,7 +542,7 @@ function M.load_syntax(colors)
 	-- Color H5 headlines/header in green/grey
 	syntax["@markup.heading.5.markdown"] = { fg = { "#889792", "none" }, style = "bold" }
 
-	syntax["@markup"] = { fg = colors.cyan }
+	syntax["@markup"] = { fg = colors.blue }
 	syntax["@markup.literal"] = { fg = colors.cyan }
 	syntax["@markup.emphasis"] = { fg = colors.orange }
 	syntax["@markup.italic.markdown_inline"] = syntax["@markup.emphasis"]
