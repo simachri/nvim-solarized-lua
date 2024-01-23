@@ -572,6 +572,7 @@ function M.load_syntax(colors)
     syntax["confluenceWord"] = { fg = colors.none }
 
     syntax["taskeditKey"] = { fg = colors.blue }
+    syntax["taskeditReadOnly"] = { fg = colors.magenta }
 
 	for group, highlights in pairs(syntax) do
 		utils.highlighter(group, highlights)
