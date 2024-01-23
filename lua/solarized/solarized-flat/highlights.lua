@@ -519,6 +519,15 @@ function M.load_syntax(colors)
 	-- Color H5 headlines/header in green/grey
 	syntax["@md.h5_text"] = { fg = { "#889792", "none" }, style = "bold" }
 
+	syntax["@markup"] = { fg = colors.cyan }
+	syntax["@markup.literal"] = { fg = colors.cyan }
+	syntax["@markup.emphasis"] = { fg = colors.orange }
+	syntax["@markup.strong"] = { fg = colors.none, style = "bold" }
+	syntax["@markup.special"] = { fg = colors.blue }
+	syntax["@punctuation.delimiter"] = { fg = colors.base01 }
+	syntax["@markup.reference"] = { fg = colors.violet }
+	syntax["@markup.uri"] = { fg = colors.base01, style = "italic" }
+
 	for group, highlights in pairs(syntax) do
 		utils.highlighter(group, highlights)
 	end
