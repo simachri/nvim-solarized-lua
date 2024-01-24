@@ -100,7 +100,7 @@ function M.load_syntax(colors)
 	syntax["ModeMsg"] = { fg = colors.blue }
 	syntax["MoreMsg"] = { fg = colors.blue }
 	-- syntax["Pmenu"] = { fg = colors.base0, bg = colors.base02, guibg = "none" }
-    -- used by Lazy and Cmp
+	-- used by Lazy and Cmp
 	syntax["Pmenu"] = {
 		fg = colors.base0,
 		bg = colors.none,
@@ -295,7 +295,7 @@ function M.load_syntax(colors)
 	syntax["Conditional"] = syntax["Statement"]
 	syntax["Debug"] = syntax["Special"]
 	syntax["Define"] = syntax["PreProc"]
-	syntax["Delimiter"] = syntax["Special"]
+	syntax["Delimiter"] = { fg = colors.base0 }
 	syntax["Exception"] = syntax["Statement"]
 	syntax["Float"] = syntax["Constant"]
 	-- Highlight floating windows borders.
@@ -311,7 +311,7 @@ function M.load_syntax(colors)
 	}
 	syntax["Function"] = { fg = colors.orange }
 	syntax["Include"] = { fg = colors.violet }
-	syntax["Keyword"] = syntax["Statement"]
+	syntax["Keyword"] = { fg = colors.green }
 	syntax["Label"] = syntax["Statement"]
 	syntax["Macro"] = syntax["PreProc"]
 	syntax["Number"] = syntax["Constant"]
@@ -324,9 +324,9 @@ function M.load_syntax(colors)
 	syntax["StatusLineTerm"] = syntax["StatusLine"]
 	syntax["StatusLineTermNC"] = syntax["StatusLineNC"]
 	syntax["StorageClass"] = syntax["Type"]
-	syntax["String"] = { fg = colors.green }
+	syntax["String"] = { fg = colors.cyan }
 	syntax["Structure"] = syntax["Type"]
-	syntax["Tag"] = syntax["Special"]
+	syntax["Tag"] = { fg = colors.blue }
 	syntax["Typedef"] = syntax["Type"]
 	syntax["lCursor"] = syntax["Cursor"]
 
@@ -522,6 +522,8 @@ function M.load_syntax(colors)
 	syntax["DapUIWatchesError"] = { fg = colors.red }
 	syntax["DapUIStoppedThread"] = { fg = colors.cyan }
 
+  syntax["@module"] = { fg = colors.violet }
+
 	-- Color the ATX ### headers in lighter grey
 	syntax["@markup.heading.1.marker.markdown"] = { fg = colors.base01, style = "italic,nocombine" }
 	syntax["@markup.heading.2.marker.markdown"] = syntax["@markup.heading.1.marker.markdown"]
@@ -550,12 +552,17 @@ function M.load_syntax(colors)
 	syntax["@punctuation.delimiter"] = { fg = colors.base01 }
 	syntax["@markup.reference"] = { fg = colors.violet }
 	syntax["@markup.uri"] = { fg = colors.base01, style = "italic" }
-	syntax["@markup.link.markdown_inline"] = { fg = colors.violet}
+	syntax["@markup.link.markdown_inline"] = { fg = colors.violet }
 	syntax["@markup.link.label.markdown_inline"] = { fg = colors.violet, style = "underline" }
 	-- syntax["@markup.link.url.markdown_inline"] = { fg = colors.base01 }
 	syntax["@markup.link.url.markdown_inline"] = { fg = colors.orange }
-    syntax["@markup.list.unchecked.markdown"] = { fg = colors.magenta }
+	syntax["@markup.list.unchecked.markdown"] = { fg = colors.magenta }
 	syntax["@markup.list.checked.markdown"] = { fg = colors.green }
+
+  syntax["@string.special.templ"] = syntax["Normal"]
+  syntax["@tag.templ"] = syntax["Tag"]
+  syntax["@tag.attribute.templ"] = { fg = colors.red }
+  syntax["@property.templ"] = { fg = colors.magenta }
 
 	syntax["FloatermBorder"] = {
 		fg = colors.base1,
@@ -568,11 +575,11 @@ function M.load_syntax(colors)
 	}
 	syntax["FloatermNC"] = syntax["FloatermBorder"]
 
-    -- others: /home/xi3k/.config/nvim/after/syntax/confluencewiki.vim
-    syntax["confluenceWord"] = { fg = colors.none }
+	-- others: /home/xi3k/.config/nvim/after/syntax/confluencewiki.vim
+	syntax["confluenceWord"] = { fg = colors.none }
 
-    syntax["taskeditKey"] = { fg = colors.blue }
-    syntax["taskeditReadOnly"] = { fg = colors.magenta }
+	syntax["taskeditKey"] = { fg = colors.blue }
+	syntax["taskeditReadOnly"] = { fg = colors.magenta }
 
 	for group, highlights in pairs(syntax) do
 		utils.highlighter(group, highlights)
