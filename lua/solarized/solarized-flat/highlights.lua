@@ -130,10 +130,10 @@ function M.load_syntax(colors)
 	syntax["Identifier"] = { fg = colors.blue }
 	syntax["Ignore"] = { fg = colors.none, ctermfg = colors.none, ctermbg = colors.none }
 	syntax["PreProc"] = { fg = colors.orange }
-	syntax["Special"] = { fg = colors.blue }
-	syntax["Statement"] = { fg = colors.green }
+	syntax["Special"] = { fg = colors.red }
+	syntax["Statement"] = { fg = colors.base0 }
 	syntax["Todo"] = { fg = colors.magenta, style = "bold" }
-	syntax["Type"] = { fg = colors.yellow }
+	syntax["Type"] = { fg = colors.orange }
 	syntax["Underlined"] = { fg = colors.violet }
 	syntax["InsertMode"] = { fg = colors.base02, bg = colors.cyan, style = "bold,reverse" }
 	syntax["ReplaceMode"] = { fg = colors.base02, bg = colors.orange, style = "bold,reverse" }
@@ -309,7 +309,7 @@ function M.load_syntax(colors)
 		ctermbg = colors.none,
 		cterm = colors.none,
 	}
-	syntax["Function"] = { fg = colors.orange }
+	syntax["Function"] = { fg = colors.orange, style = "italic" }
 	syntax["Include"] = { fg = colors.violet }
 	syntax["Keyword"] = { fg = colors.green }
 	syntax["Label"] = syntax["Statement"]
@@ -522,7 +522,7 @@ function M.load_syntax(colors)
 	syntax["DapUIWatchesError"] = { fg = colors.red }
 	syntax["DapUIStoppedThread"] = { fg = colors.cyan }
 
-  syntax["@module"] = { fg = colors.violet }
+	syntax["@module"] = { fg = colors.base0 }
 
 	-- Color the ATX ### headers in lighter grey
 	syntax["@markup.heading.1.marker.markdown"] = { fg = colors.base01, style = "italic,nocombine" }
@@ -559,10 +559,14 @@ function M.load_syntax(colors)
 	syntax["@markup.list.unchecked.markdown"] = { fg = colors.magenta }
 	syntax["@markup.list.checked.markdown"] = { fg = colors.green }
 
-  syntax["@string.special"] = syntax["Normal"]
-  syntax["@tag"] = syntax["Tag"]
-  syntax["@property"] = { fg = colors.magenta }
-  syntax["@tag.attribute"] = { fg = colors.red }
+	syntax["@string.special"] = syntax["Normal"]
+	syntax["@tag"] = syntax["Tag"]
+	syntax["@tag.attribute"] = { fg = colors.red }
+	syntax["@variable"] = syntax["Identifier"]
+	syntax["@variable.parameter"] = syntax["Identifier"]
+	syntax["@property"] = { fg = colors.violet }
+	syntax["@variable.member"] = syntax["@property"]
+	syntax["@constructor"] = syntax["Function"]
 
 	syntax["FloatermBorder"] = {
 		fg = colors.base1,
@@ -581,8 +585,20 @@ function M.load_syntax(colors)
 	syntax["taskeditKey"] = { fg = colors.blue }
 	syntax["taskeditReadOnly"] = { fg = colors.magenta }
 
-  syntax["NvimTreeFolderArrowOpen"] = { fg = colors.base0 }
-  syntax["NvimTreeFolderArrowClosed"] = syntax["NvimTreeFolderArrowOpen"]
+	syntax["NvimTreeFolderArrowOpen"] = { fg = colors.base0 }
+	syntax["NvimTreeFolderArrowClosed"] = syntax["NvimTreeFolderArrowOpen"]
+
+	syntax["@lsp.type.namespace"] = syntax["@module"]
+	syntax["@lsp.type.parameter"] = syntax["@variable"]
+	syntax["@lsp.type.variable"] = syntax["@variable"]
+	syntax["@lsp.typemod.type.definition"] = syntax["Type"]
+	syntax["@lsp.typemod.variable.definition"] = syntax["Identifier"]
+	syntax["@lsp.typemod.function.definition"] = syntax["Function"]
+	syntax["@lsp.typemod.method.definition"] = syntax["Function"]
+	syntax["@lsp.typemod.variable.readonly"] = syntax["@property"]
+	syntax["@lsp.typemod.variable.defaultLibrary"] = { fg = colors.magenta, style = "italic" }
+	syntax["@lsp.mod.definition"] = syntax["Identifier"]
+	syntax["LspCodeLens"] = { fg = colors.base01, style = "italic" }
 
 	for group, highlights in pairs(syntax) do
 		utils.highlighter(group, highlights)
