@@ -581,6 +581,9 @@ function M.load_syntax(colors)
 	syntax["taskeditKey"] = { fg = colors.blue }
 	syntax["taskeditReadOnly"] = { fg = colors.magenta }
 
+  syntax["NvimTreeFolderArrowOpen"] = { fg = colors.base0 }
+  syntax["NvimTreeFolderArrowClosed"] = syntax["NvimTreeFolderArrowOpen"]
+
 	for group, highlights in pairs(syntax) do
 		utils.highlighter(group, highlights)
 	end
