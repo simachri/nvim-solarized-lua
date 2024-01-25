@@ -559,10 +559,10 @@ function M.load_syntax(colors)
 	syntax["@markup.list.unchecked.markdown"] = { fg = colors.magenta }
 	syntax["@markup.list.checked.markdown"] = { fg = colors.green }
 
-  syntax["@string.special.templ"] = syntax["Normal"]
-  syntax["@tag.templ"] = syntax["Tag"]
-  syntax["@tag.attribute.templ"] = { fg = colors.red }
-  syntax["@property.templ"] = { fg = colors.magenta }
+  syntax["@string.special"] = syntax["Normal"]
+  syntax["@tag"] = syntax["Tag"]
+  syntax["@property"] = { fg = colors.magenta }
+  syntax["@tag.attribute"] = { fg = colors.red }
 
 	syntax["FloatermBorder"] = {
 		fg = colors.base1,
