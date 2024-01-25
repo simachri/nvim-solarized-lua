@@ -532,7 +532,7 @@ function M.load_syntax(colors)
 	syntax["@markup.heading.5.marker.markdown"] = syntax["@markup.heading.1.marker.markdown"]
 	syntax["@markup.heading.6.marker.markdown"] = syntax["@markup.heading.1.marker.markdown"]
 	-- Color H1 headlines/header in red
-	syntax["@markup.heading.1.markdown"] = { fg = { "#cd6a46", "none" }, style = "bold" }
+	syntax["@markup.heading.1.markdown"] = { fg = colors.red, style = "bold" }
 	-- Color H2 headlines/header in blue
 	syntax["@markup.heading.2.markdown"] = { fg = colors.blue, style = "bold" }
 	-- Color H3 headlines/header in darker green
@@ -545,9 +545,9 @@ function M.load_syntax(colors)
 	syntax["@markup"] = { fg = colors.blue }
 	syntax["@markup.literal"] = { fg = colors.cyan }
 	syntax["@markup.raw.markdown_inline"] = syntax["@markup.literal"]
-	syntax["@markup.emphasis"] = { fg = colors.orange }
+	syntax["@markup.emphasis"] = { fg = colors.orange, style = "italic" }
 	syntax["@markup.italic.markdown_inline"] = syntax["@markup.emphasis"]
-	syntax["@markup.strong"] = { fg = colors.none, style = "bold" }
+	syntax["@markup.strong"] = { fg = colors.green, style = "bold" }
 	syntax["@markup.special"] = { fg = colors.blue }
 	syntax["@punctuation.delimiter"] = { fg = colors.base01 }
 	syntax["@markup.reference"] = { fg = colors.violet }
