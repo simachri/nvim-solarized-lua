@@ -550,10 +550,11 @@ function M.load_syntax(colors)
 	syntax["@markup.strong"] = { fg = colors.green, style = "bold" }
 	syntax["@markup.special"] = { fg = colors.blue }
 	syntax["@punctuation.delimiter"] = { fg = colors.base01 }
+	syntax["@punctuation.bracket"] = { fg = colors.red }
 	syntax["@markup.reference"] = { fg = colors.violet }
 	syntax["@markup.uri"] = { fg = colors.base01, style = "italic" }
 	syntax["@markup.link.markdown_inline"] = { fg = colors.violet }
-	syntax["@markup.link.label.markdown_inline"] = { fg = colors.violet, style = "underline" }
+	syntax["@markup.link.label.markdown_inline"] = { fg = colors.violet, style = "italic" }
 	-- syntax["@markup.link.url.markdown_inline"] = { fg = colors.base01 }
 	syntax["@markup.link.url.markdown_inline"] = { fg = colors.orange }
 	syntax["@markup.list.unchecked.markdown"] = { fg = colors.magenta }
