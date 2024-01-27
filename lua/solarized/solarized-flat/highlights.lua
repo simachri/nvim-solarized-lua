@@ -124,7 +124,7 @@ function M.load_syntax(colors)
 	syntax["WarningMsg"] = { fg = colors.orange, style = "bold" }
 	syntax["WildMenu"] = { fg = colors.base00, bg = colors.base2, style = "reverse" }
 	syntax["Comment"] = { fg = colors.base01, style = utils.italics() }
-	syntax["Constant"] = { fg = colors.violet }
+	syntax["Constant"] = { fg = colors.red }
 	syntax["CursorIM"] = { fg = colors.none, bg = colors.base0 }
 	syntax["Error"] = { fg = colors.red, bg = colors.err_bg, style = "underline" }
 	syntax["Identifier"] = { fg = colors.blue }
@@ -550,7 +550,7 @@ function M.load_syntax(colors)
 	syntax["@markup.strong"] = { fg = colors.green, style = "bold" }
 	syntax["@markup.special"] = { fg = colors.blue }
 	syntax["@punctuation.delimiter"] = { fg = colors.base01 }
-	syntax["@punctuation.bracket"] = { fg = colors.red }
+	syntax["@punctuation.bracket"] = { fg = colors.base0 }
 	syntax["@markup.reference"] = { fg = colors.violet }
 	syntax["@markup.uri"] = { fg = colors.base01, style = "italic" }
 	syntax["@markup.link.markdown_inline"] = { fg = colors.violet }
@@ -560,7 +560,7 @@ function M.load_syntax(colors)
 	syntax["@markup.list.unchecked.markdown"] = { fg = colors.magenta }
 	syntax["@markup.list.checked.markdown"] = { fg = colors.green }
 
-	syntax["@string.special"] = syntax["Normal"]
+	syntax["@string.special"] = { fg = colors.base1 }
 	syntax["@tag"] = syntax["Tag"]
 	syntax["@tag.attribute"] = { fg = colors.red }
 	syntax["@variable"] = syntax["Identifier"]
@@ -593,15 +593,18 @@ function M.load_syntax(colors)
 	syntax["NvimTreeFolderArrowOpen"] = { fg = colors.base0 }
 	syntax["NvimTreeFolderArrowClosed"] = syntax["NvimTreeFolderArrowOpen"]
 
+    syntax["@keyword.return"] = { fg = colors.base0, style = "bold" }
+
 	syntax["@lsp.type.namespace"] = syntax["@module"]
 	syntax["@lsp.type.parameter"] = syntax["@variable"]
 	syntax["@lsp.type.variable"] = syntax["@variable"]
+	syntax["@lsp.type.number"] = syntax["Constant"]
 	syntax["@lsp.typemod.type.definition"] = syntax["Type"]
 	syntax["@lsp.typemod.variable.definition"] = syntax["Identifier"]
 	syntax["@lsp.typemod.function.definition"] = syntax["Function"]
 	syntax["@lsp.typemod.method.definition"] = syntax["Function"]
 	syntax["@lsp.typemod.variable.readonly"] = syntax["@property"]
-	syntax["@lsp.typemod.variable.defaultLibrary"] = { fg = colors.magenta, style = "italic" }
+	syntax["@lsp.typemod.variable.defaultLibrary"] = { fg = colors.magenta }
 	syntax["@lsp.mod.definition"] = syntax["Identifier"]
 	syntax["LspCodeLens"] = { fg = colors.base01, style = "italic" }
 
