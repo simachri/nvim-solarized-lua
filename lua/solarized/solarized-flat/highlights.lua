@@ -569,6 +569,10 @@ function M.load_syntax(colors)
 	syntax["@variable.member"] = syntax["@property"]
 	syntax["@constructor"] = syntax["Function"]
 
+	syntax["@constant.builtin"] = { fg = colors.magenta }
+	syntax["@function.builtin"] = syntax["@constant.builtin"]
+	syntax["@lsp.typemod.function.defaultLibrary"] = syntax["@constant.builtin"]
+
 	syntax["FloatermBorder"] = {
 		fg = colors.base1,
 		bg = colors.none,
