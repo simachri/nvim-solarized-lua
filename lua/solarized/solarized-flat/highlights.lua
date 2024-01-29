@@ -554,7 +554,7 @@ function M.load_syntax(colors)
 	syntax["@markup.reference"] = { fg = colors.violet }
 	syntax["@markup.uri"] = { fg = colors.base01, style = "italic" }
 	syntax["@markup.link.markdown_inline"] = { fg = colors.violet }
-	syntax["@markup.link.label.markdown_inline"] = { fg = colors.violet, style = "italic" }
+	syntax["@markup.link.label.markdown_inline"] = { fg = colors.violet, style = "underline" }
 	-- syntax["@markup.link.url.markdown_inline"] = { fg = colors.base01 }
 	syntax["@markup.link.url.markdown_inline"] = { fg = colors.orange }
 	syntax["@markup.list.unchecked.markdown"] = { fg = colors.magenta }
@@ -566,6 +566,7 @@ function M.load_syntax(colors)
 	syntax["@variable"] = syntax["Identifier"]
 	syntax["@variable.parameter"] = syntax["Identifier"]
 	syntax["@property"] = { fg = colors.violet }
+	syntax["@constant.go"] = syntax["@property"]
 	syntax["@variable.member"] = syntax["@property"]
 	syntax["@constructor"] = syntax["Function"]
 
@@ -593,7 +594,7 @@ function M.load_syntax(colors)
 	syntax["NvimTreeFolderArrowOpen"] = { fg = colors.base0 }
 	syntax["NvimTreeFolderArrowClosed"] = syntax["NvimTreeFolderArrowOpen"]
 
-    syntax["@keyword.return"] = { fg = colors.base0, style = "bold" }
+	syntax["@keyword.return"] = { fg = colors.base0, style = "bold" }
 
 	syntax["@lsp.type.namespace"] = syntax["@module"]
 	syntax["@lsp.type.parameter"] = syntax["@variable"]
