@@ -565,9 +565,12 @@ function M.load_syntax(colors)
 	syntax["@tag.attribute"] = { fg = colors.red }
 	syntax["@variable"] = syntax["Identifier"]
 	syntax["@variable.parameter"] = syntax["Identifier"]
+	syntax["@lsp.typemod.variable.readonly"] = syntax["Identifier"]
 	syntax["@property"] = { fg = colors.violet }
 	syntax["@constant.go"] = syntax["@property"]
 	syntax["@variable.member"] = syntax["@property"]
+    syntax["@lsp.type.property"] = syntax["@property"]
+    syntax["@lsp.typemod.property.declaration"] = syntax["@property"]
 	syntax["@constructor"] = syntax["Function"]
 
 	syntax["@constant.builtin"] = { fg = colors.magenta }
@@ -604,7 +607,6 @@ function M.load_syntax(colors)
 	syntax["@lsp.typemod.variable.definition"] = syntax["Identifier"]
 	syntax["@lsp.typemod.function.definition"] = syntax["Function"]
 	syntax["@lsp.typemod.method.definition"] = syntax["Function"]
-	syntax["@lsp.typemod.variable.readonly"] = syntax["@property"]
 	syntax["@lsp.typemod.variable.defaultLibrary"] = { fg = colors.magenta }
 	syntax["@lsp.mod.definition"] = syntax["Identifier"]
 	syntax["LspCodeLens"] = { fg = colors.base01, style = "italic" }
