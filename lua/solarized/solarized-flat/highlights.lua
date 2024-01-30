@@ -312,7 +312,7 @@ function M.load_syntax(colors)
 	syntax["Function"] = { fg = colors.orange, style = "italic" }
 	syntax["Include"] = { fg = colors.violet }
 	syntax["Keyword"] = { fg = colors.green }
-	syntax["Label"] = syntax["Statement"]
+	syntax["Label"] = { fg = colors.orange }
 	syntax["Macro"] = syntax["PreProc"]
 	syntax["Number"] = syntax["Constant"]
 	syntax["Operator"] = syntax["Statement"]
