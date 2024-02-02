@@ -535,12 +535,14 @@ function M.load_syntax(colors)
 	syntax["@markup.heading.1.markdown"] = { fg = colors.red, style = "bold" }
 	-- Color H2 headlines/header in blue
 	syntax["@markup.heading.2.markdown"] = { fg = colors.blue, style = "bold" }
-	-- Color H3 headlines/header in darker green
-	syntax["@markup.heading.3.markdown"] = { fg = { "#607266", "none" }, style = "bold" }
-	-- Color H4 headlines/header in green/grey
-	syntax["@markup.heading.4.markdown"] = { fg = { "#889792", "none" }, style = "bold" }
+	-- Color H3 headlines/header in yellow
+	-- syntax["@markup.heading.3.markdown"] = { fg = { "#607266", "none" }, style = "bold" }
+	syntax["@markup.heading.3.markdown"] = { fg = colors.yellow, style = "bold" }
+	-- Color H4 headlines/header in darker green
+	syntax["@markup.heading.4.markdown"] = { fg = { "#607266", "none" }, style = "bold" }
 	-- Color H5 headlines/header in green/grey
-	syntax["@markup.heading.5.markdown"] = { fg = { "#889792", "none" }, style = "bold" }
+	-- syntax["@markup.heading.5.markdown"] = { fg = { "#889792", "none" }, style = "bold" }
+	syntax["@markup.heading.5.markdown"] = { fg = { "#607266", "none" }, style = "bold" }
 
 	syntax["@markup"] = { fg = colors.blue }
 	syntax["@markup.literal"] = { fg = colors.cyan }
