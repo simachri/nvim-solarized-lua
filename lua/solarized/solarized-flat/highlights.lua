@@ -613,6 +613,9 @@ function M.load_syntax(colors)
 	syntax["@lsp.mod.definition"] = syntax["Identifier"]
 	syntax["LspCodeLens"] = { fg = colors.base01, style = "italic" }
 
+    syntax["xmlTag"] = { fg = colors.blue }
+    syntax["xmlTagName"] = syntax["xmlTag"]
+
 	for group, highlights in pairs(syntax) do
 		utils.highlighter(group, highlights)
 	end
