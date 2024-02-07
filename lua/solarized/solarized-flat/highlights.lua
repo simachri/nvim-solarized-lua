@@ -96,7 +96,8 @@ function M.load_syntax(colors)
 	syntax["Folded"] = { fg = colors.base0, guisp = colors.base03, style = "bold" }
 	syntax["IncSearch"] = { fg = colors.red, style = "standout" }
 	syntax["LineNr"] = { fg = colors.base01 }
-	syntax["MatchParen"] = { fg = colors.base3, bg = colors.base02, style = "bold" }
+	-- syntax["MatchParen"] = { fg = colors.base3, bg = colors.base02, style = "bold" }
+	syntax["MatchParen"] = { fg = colors.base0, bg = colors.base02, style = "bold" }
 	syntax["ModeMsg"] = { fg = colors.blue }
 	syntax["MoreMsg"] = { fg = colors.blue }
 	-- syntax["Pmenu"] = { fg = colors.base0, bg = colors.base02, guibg = "none" }
@@ -537,9 +538,10 @@ function M.load_syntax(colors)
 	syntax["@markup.heading.2.markdown"] = { fg = colors.blue, style = "bold" }
 	-- Color H3 headlines/header in yellow
 	-- syntax["@markup.heading.3.markdown"] = { fg = { "#607266", "none" }, style = "bold" }
-	syntax["@markup.heading.3.markdown"] = { fg = colors.yellow, style = "bold" }
+	syntax["@markup.heading.3.markdown"] = { fg = colors.green, style = "bold" }
 	-- Color H4 headlines/header in darker green
-	syntax["@markup.heading.4.markdown"] = { fg = { "#607266", "none" }, style = "bold" }
+	-- syntax["@markup.heading.4.markdown"] = { fg = { "#607266", "none" }, style = "bold" }
+	syntax["@markup.heading.4.markdown"] = { fg = colors.yellow, style = "bold" }
 	-- Color H5 headlines/header in green/grey
 	-- syntax["@markup.heading.5.markdown"] = { fg = { "#889792", "none" }, style = "bold" }
 	syntax["@markup.heading.5.markdown"] = { fg = { "#607266", "none" }, style = "bold" }
@@ -549,7 +551,7 @@ function M.load_syntax(colors)
 	syntax["@markup.raw.markdown_inline"] = syntax["@markup.literal"]
 	syntax["@markup.emphasis"] = { fg = colors.orange, style = "italic" }
 	syntax["@markup.italic.markdown_inline"] = syntax["@markup.emphasis"]
-	syntax["@markup.strong"] = { fg = colors.green, style = "bold" }
+	syntax["@markup.strong"] = { fg = colors.base1, style = "bold" }
 	syntax["@markup.special"] = { fg = colors.blue }
 	syntax["@punctuation.delimiter"] = { fg = colors.base01 }
 	syntax["@punctuation.bracket"] = { fg = colors.base0 }
@@ -559,6 +561,7 @@ function M.load_syntax(colors)
 	syntax["@markup.link.label.markdown_inline"] = { fg = colors.violet }
 	-- syntax["@markup.link.url.markdown_inline"] = { fg = colors.base01 }
 	syntax["@markup.link.url.markdown_inline"] = { fg = colors.orange }
+	syntax["@markup.list"] = { fg = colors.magenta }
 	syntax["@markup.list.unchecked.markdown"] = { fg = colors.magenta }
 	syntax["@markup.list.checked.markdown"] = { fg = colors.green }
 
