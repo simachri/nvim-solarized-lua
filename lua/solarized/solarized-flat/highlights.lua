@@ -337,7 +337,7 @@ function M.load_syntax(colors)
 	syntax["helpSpecial"] = syntax["Special"]
 	syntax["vimSet"] = syntax["Normal"]
 	syntax["vimSetEqual"] = syntax["Normal"]
-	syntax["diffAdded"] = syntax["Statement"]
+	syntax["diffAdded"] = { fg = colors.green }
 	syntax["diffLine"] = syntax["Identifier"]
 	syntax["gitcommitUntracked"] = syntax["gitcommitComment"]
 	syntax["gitcommitDiscarded"] = syntax["gitcommitComment"]
