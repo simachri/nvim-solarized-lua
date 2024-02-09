@@ -532,19 +532,14 @@ function M.load_syntax(colors)
 	syntax["@markup.heading.4.marker.markdown"] = syntax["@markup.heading.1.marker.markdown"]
 	syntax["@markup.heading.5.marker.markdown"] = syntax["@markup.heading.1.marker.markdown"]
 	syntax["@markup.heading.6.marker.markdown"] = syntax["@markup.heading.1.marker.markdown"]
-	-- Color H1 headlines/header in red
 	syntax["@markup.heading.1.markdown"] = { fg = colors.red, style = "bold" }
-	-- Color H2 headlines/header in blue
 	syntax["@markup.heading.2.markdown"] = { fg = colors.blue, style = "bold" }
-	-- Color H3 headlines/header in yellow
 	-- syntax["@markup.heading.3.markdown"] = { fg = { "#607266", "none" }, style = "bold" }
 	syntax["@markup.heading.3.markdown"] = { fg = colors.green, style = "bold" }
-	-- Color H4 headlines/header in darker green
 	-- syntax["@markup.heading.4.markdown"] = { fg = { "#607266", "none" }, style = "bold" }
-	syntax["@markup.heading.4.markdown"] = { fg = colors.yellow, style = "bold" }
-	-- Color H5 headlines/header in green/grey
+	syntax["@markup.heading.4.markdown"] = { fg = { "#607266", "none" }, style = "bold" }
 	-- syntax["@markup.heading.5.markdown"] = { fg = { "#889792", "none" }, style = "bold" }
-	syntax["@markup.heading.5.markdown"] = { fg = { "#607266", "none" }, style = "bold" }
+	syntax["@markup.heading.5.markdown"] = { fg = colors.yellow, style = "bold" }
 
 	syntax["@markup"] = { fg = colors.blue }
 	syntax["@markup.literal"] = { fg = colors.cyan }
@@ -574,8 +569,8 @@ function M.load_syntax(colors)
 	syntax["@property"] = { fg = colors.violet }
 	syntax["@constant.go"] = syntax["@property"]
 	syntax["@variable.member"] = syntax["@property"]
-    syntax["@lsp.type.property"] = syntax["@property"]
-    syntax["@lsp.typemod.property.declaration"] = syntax["@property"]
+	syntax["@lsp.type.property"] = syntax["@property"]
+	syntax["@lsp.typemod.property.declaration"] = syntax["@property"]
 	syntax["@constructor"] = syntax["Function"]
 
 	syntax["@constant.builtin"] = { fg = colors.magenta }
@@ -616,8 +611,8 @@ function M.load_syntax(colors)
 	syntax["@lsp.mod.definition"] = syntax["Identifier"]
 	syntax["LspCodeLens"] = { fg = colors.base01, style = "italic" }
 
-    syntax["xmlTag"] = { fg = colors.blue }
-    syntax["xmlTagName"] = syntax["xmlTag"]
+	syntax["xmlTag"] = { fg = colors.blue }
+	syntax["xmlTagName"] = syntax["xmlTag"]
 
 	for group, highlights in pairs(syntax) do
 		utils.highlighter(group, highlights)
