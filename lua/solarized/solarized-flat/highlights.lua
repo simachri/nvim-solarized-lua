@@ -532,14 +532,14 @@ function M.load_syntax(colors)
 	syntax["@markup.heading.4.marker.markdown"] = syntax["@markup.heading.1.marker.markdown"]
 	syntax["@markup.heading.5.marker.markdown"] = syntax["@markup.heading.1.marker.markdown"]
 	syntax["@markup.heading.6.marker.markdown"] = syntax["@markup.heading.1.marker.markdown"]
-	syntax["@markup.heading.1.markdown"] = { fg = colors.red, style = "bold" }
-	syntax["@markup.heading.2.markdown"] = { fg = colors.blue, style = "bold" }
+	syntax["@markup.heading.1.markdown"] = { fg = colors.red, style = "bold,italic" }
+	syntax["@markup.heading.2.markdown"] = { fg = colors.blue, style = "bold,italic" }
 	-- syntax["@markup.heading.3.markdown"] = { fg = { "#607266", "none" }, style = "bold" }
-	syntax["@markup.heading.3.markdown"] = { fg = colors.green, style = "bold" }
+	syntax["@markup.heading.3.markdown"] = { fg = colors.green, style = "bold,italic" }
 	-- syntax["@markup.heading.4.markdown"] = { fg = { "#607266", "none" }, style = "bold" }
-	syntax["@markup.heading.4.markdown"] = { fg = { "#607266", "none" }, style = "bold" }
+	syntax["@markup.heading.4.markdown"] = { fg = { "#607266", "none" }, style = "bold,italic" }
 	-- syntax["@markup.heading.5.markdown"] = { fg = { "#889792", "none" }, style = "bold" }
-	syntax["@markup.heading.5.markdown"] = { fg = colors.yellow, style = "bold" }
+	syntax["@markup.heading.5.markdown"] = { fg = colors.yellow, style = "bold,italic" }
 
 	syntax["@markup"] = { fg = colors.blue }
 	syntax["@markup.literal"] = { fg = colors.cyan }
