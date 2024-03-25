@@ -614,6 +614,12 @@ function M.load_syntax(colors)
 	syntax["xmlTag"] = { fg = colors.blue }
 	syntax["xmlTagName"] = syntax["xmlTag"]
 
+	syntax["@type.builtin.java"] = syntax["@lsp.typemod.variable.defaultLibrary"]
+	syntax["@lsp.typemod.interface.public.java"] = { fg = colors.base0 }
+	syntax["javaAnnotation"] = syntax["String"]
+	syntax["@attribute.java"] = syntax["String"]
+	syntax["@lsp.type.annotation.java"] = syntax["String"]
+
 	for group, highlights in pairs(syntax) do
 		utils.highlighter(group, highlights)
 	end
